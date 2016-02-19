@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LockZone", "LockZone\LockZone.shproj", "{E515EE68-E42C-4A2E-8624-8F937FA76350}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LockZone.P328", "LockZone.P328\LockZone.P328.csproj", "{7AF1D857-8CE8-4AC9-B906-C70E27C03E89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LockZone.P92", "LockZone.P92\LockZone.P92.csproj", "{1E2C9887-79C5-45D5-A908-35237A6D4520}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		LockZone\LockZone.projitems*{e515ee68-e42c-4a2e-8624-8f937fa76350}*SharedItemsImports = 13
+		LockZone\LockZone.projitems*{7af1d857-8ce8-4ac9-b906-c70e27c03e89}*SharedItemsImports = 4
+		LockZone\LockZone.projitems*{1e2c9887-79c5-45d5-a908-35237a6d4520}*SharedItemsImports = 4
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AF1D857-8CE8-4AC9-B906-C70E27C03E89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF1D857-8CE8-4AC9-B906-C70E27C03E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF1D857-8CE8-4AC9-B906-C70E27C03E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF1D857-8CE8-4AC9-B906-C70E27C03E89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E2C9887-79C5-45D5-A908-35237A6D4520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E2C9887-79C5-45D5-A908-35237A6D4520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E2C9887-79C5-45D5-A908-35237A6D4520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E2C9887-79C5-45D5-A908-35237A6D4520}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
