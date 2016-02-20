@@ -18,11 +18,11 @@ public class ReaderLockWrapper : AbstractReaderWriterLockWrapper
 
 public struct ReaderLockZone
 {
-    public ReaderLockWrapper UnderlayedReaderLock;
+    public ReaderLockWrapper UnderlaidReaderLock;
 
     public ReaderLockZone(ReaderLockWrapper readerLock)
     {
-        UnderlayedReaderLock = readerLock;
+        UnderlaidReaderLock = readerLock;
     }
     public ReaderLockZone(ReaderWriterLockSlim rwl)
         : this(new ReaderLockWrapper(rwl))
@@ -30,8 +30,8 @@ public struct ReaderLockZone
 
     public IDisposable Locking()
     {
-        UnderlayedReaderLock.Enter();
-        return UnderlayedReaderLock;
+        UnderlaidReaderLock.Enter();
+        return UnderlaidReaderLock;
     }
 }
 

@@ -15,26 +15,26 @@ public abstract class AbstractReaderWriterLockWrapper : DisposableLock
 
 public struct ReaderWriterLockZone
 {
-    public ReaderLockWrapper UnderlayedReaderLock;
-    public WriterLockWrapper UnderlayedWriterLock;
+    public ReaderLockWrapper UnderlaidReaderLock;
+    public WriterLockWrapper UnderlaidWriterLock;
 
     public ReaderWriterLockZone(ReaderWriterLockSlim rwl)
     {
-        UnderlayedReaderLock = new ReaderLockWrapper(rwl);
-        UnderlayedWriterLock = new WriterLockWrapper(rwl);
+        UnderlaidReaderLock = new ReaderLockWrapper(rwl);
+        UnderlaidWriterLock = new WriterLockWrapper(rwl);
     }
     public static ReaderWriterLockZone Spawn()
         => new ReaderWriterLockZone(new ReaderWriterLockSlim());
 
     public IDisposable ReaderLocking()
     {
-        UnderlayedReaderLock.Enter();
-        return UnderlayedReaderLock;
+        UnderlaidReaderLock.Enter();
+        return UnderlaidReaderLock;
     }
     public IDisposable WriterLocking()
     {
-        UnderlayedWriterLock.Enter();
-        return UnderlayedWriterLock;
+        UnderlaidWriterLock.Enter();
+        return UnderlaidWriterLock;
     }
 }
 
