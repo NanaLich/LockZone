@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>LockZone</id>
+        <version>0.0-a</version>
+        <authors>Licshee</authors>
+        <projectUrl>https://github.com/OmniKits/LockZone</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>IDisposable wrapper(s) for lock abstraction.</description>
+    </metadata>
+    <files>
+        <file src="P328\LockZone.dll" target="lib\portable-net4+sl5+win8+wp8+wpa\LockZone.dll" />
+        <file src="P92\LockZone.dll" target="lib\portable-net4+win8+wp8+wpa+dnxcore\LockZone.dll" />
+        <file src="P92\LockZone.dll" target="lib\portable-net4+win8+wp8+wpa\LockZone.dll" />
+    </files>
+</package>
