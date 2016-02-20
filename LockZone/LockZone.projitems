@@ -10,6 +10,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)LockZone.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WriterLockZone.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ReaderLockZone.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ReaderWriterLockZone.cs" />
   </ItemGroup>
 </Project>
