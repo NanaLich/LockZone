@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>LockZone</id>
-        <version>0.0-b</version>
+        <version>0.0-c</version>
         <authors>Licshee</authors>
         <projectUrl>https://github.com/OmniKits/LockZone</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
