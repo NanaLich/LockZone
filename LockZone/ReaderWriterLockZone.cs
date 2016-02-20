@@ -1,7 +1,22 @@
 ﻿using System;
 using System.Threading;
 
-#if !SupportSilverlight
+#if SupportSilverlight
+
+public struct ReaderWriterLockZone
+{
+    private LockZone _Lock;
+
+    public static ReaderWriterLockZone Spawn()
+       => new ReaderWriterLockZone { _Lock = LockZone.Spawn() };
+
+    public IDisposable ReaderLocking()
+        => _Lock.Locking();
+    public IDisposable WriterLocking()
+        => _Lock.Locking();
+}
+
+#else
 
 public abstract class AbstractReaderWriterLockWrapper : DisposableLock
 {
