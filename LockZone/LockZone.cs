@@ -1,19 +1,31 @@
 ﻿using System;
 using System.Threading;
 
-public class LockZone : IDisposable
+public class DisposableLock : IDisposable
 {
     public virtual void Enter()
         => Monitor.Enter(this);
     public virtual void Leave()
         => Monitor.Exit(this);
 
-    public virtual IDisposable Lock()
-    {
-        Enter();
-        return this;
-    }
-
     void IDisposable.Dispose()
         => Leave();
+}
+
+public struct LockZone
+{
+    public DisposableLock BaseLock;
+
+    public LockZone(DisposableLock baseLock)
+    {
+        BaseLock = baseLock;
+    }
+    public static LockZone Spawn()
+        => new LockZone(new DisposableLock());
+
+    public IDisposable Lock()
+    {
+        BaseLock.Enter();
+        return BaseLock;
+    }
 }
