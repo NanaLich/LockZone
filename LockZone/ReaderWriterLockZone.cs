@@ -26,12 +26,12 @@ public struct ReaderWriterLockZone
     public static ReaderWriterLockZone Spawn()
         => new ReaderWriterLockZone(new ReaderWriterLockSlim());
 
-    public IDisposable ReaderLock()
+    public IDisposable ReaderLocking()
     {
         UnderlayedReaderLock.Enter();
         return UnderlayedReaderLock;
     }
-    public IDisposable WriterLock()
+    public IDisposable WriterLocking()
     {
         UnderlayedWriterLock.Enter();
         return UnderlayedWriterLock;

@@ -23,7 +23,7 @@ public struct LockZone
     public static LockZone Spawn()
         => new LockZone(new DisposableLock());
 
-    public IDisposable Lock()
+    public IDisposable Locking()
     {
         BaseLock.Enter();
         return BaseLock;

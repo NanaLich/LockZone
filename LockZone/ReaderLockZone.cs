@@ -28,7 +28,7 @@ public struct ReaderLockZone
         : this(new ReaderLockWrapper(rwl))
     { }
 
-    public IDisposable Lock()
+    public IDisposable Locking()
     {
         UnderlayedReaderLock.Enter();
         return UnderlayedReaderLock;

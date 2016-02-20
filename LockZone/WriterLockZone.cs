@@ -28,7 +28,7 @@ public struct WriterLockZone
         : this(new WriterLockWrapper(rwl))
     { }
 
-    public IDisposable Lock()
+    public IDisposable Locking()
     {
         UnderlayedWriterLock.Enter();
         return UnderlayedWriterLock;
