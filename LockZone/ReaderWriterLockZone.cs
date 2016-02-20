@@ -5,15 +5,28 @@ using System.Threading;
 
 public struct ReaderWriterLockZone
 {
-    private LockZone _Lock;
+    public DisposableLock UnderlaidReaderLock;
+    public DisposableLock UnderlaidWriterLock;
+
+    private ReaderWriterLockZone(DisposableLock @lock)
+    {
+        UnderlaidReaderLock = @lock;
+        UnderlaidWriterLock = @lock;
+    }
 
     public static ReaderWriterLockZone Spawn()
-       => new ReaderWriterLockZone { _Lock = LockZone.Spawn() };
+        => new ReaderWriterLockZone(new DisposableLock());
 
     public IDisposable ReaderLocking()
-        => _Lock.Locking();
+    {
+        UnderlaidReaderLock.Enter();
+        return UnderlaidReaderLock;
+    }
     public IDisposable WriterLocking()
-        => _Lock.Locking();
+    {
+        UnderlaidWriterLock.Enter();
+        return UnderlaidWriterLock;
+    }
 }
 
 #else
@@ -30,8 +43,8 @@ public abstract class AbstractReaderWriterLockWrapper : DisposableLock
 
 public struct ReaderWriterLockZone
 {
-    public ReaderLockWrapper UnderlaidReaderLock;
-    public WriterLockWrapper UnderlaidWriterLock;
+    public DisposableLock UnderlaidReaderLock;
+    public DisposableLock UnderlaidWriterLock;
 
     public ReaderWriterLockZone(ReaderWriterLockSlim rwl)
     {
